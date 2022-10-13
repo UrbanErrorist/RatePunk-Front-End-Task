@@ -1,21 +1,26 @@
-import { AccountCircle } from '@mui/icons-material';
 import {
+  Box,
   Button,
   Card,
   FormControl,
-  FormHelperText,
   Grid,
   InputAdornment,
   OutlinedInput,
-  TextField,
+  Rating,
+  styled,
   Typography,
 } from '@mui/material';
-import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import ResponsiveNavBar from '../src/components/navbar';
-import styles from '../styles/Home.module.css';
 
+import ResponsiveNavBar from '../src/components/navbar';
+
+import type { NextPage } from 'next';
+import { Star } from '@mui/icons-material';
+const ImgWrapper = styled('img')(
+  ({ theme }) => `
+    margin-right: ${theme.spacing(1)};
+`,
+);
 const Home: NextPage = () => {
   return (
     <Grid sx={{ backgroundColor: '#F8CC5D' }}>
@@ -34,7 +39,7 @@ const Home: NextPage = () => {
               backgroundColor: '#F8F4F9',
               border: '1px solid #1F343E',
               borderRadius: '16px',
-              width: '544px',
+              width: { lg: '544px', xs: 'auto' },
               height: '797px',
             }}>
             <Grid
@@ -74,9 +79,19 @@ const Home: NextPage = () => {
             <Grid
               p={8}
               pt={0}
+              pb={2}
               container
               direction={'column'}
               justifyContent={'space-between'}>
+              <Typography
+                sx={{
+                  font: 'normal normal normal 12px/24px Noto Sans',
+                  color: '#ED6F82',
+                  pb: 0.5,
+                }}
+                color={'error'}>
+                Error State
+              </Typography>
               <FormControl variant="outlined">
                 <OutlinedInput
                   placeholder="Enter your email address"
@@ -88,7 +103,7 @@ const Home: NextPage = () => {
                   id="outlined-adornment-weight"
                   startAdornment={
                     <InputAdornment position="end">
-                      <AccountCircle></AccountCircle>
+                      <img src="/assets/email.svg" alt="Email" />
                     </InputAdornment>
                   }
                   aria-describedby="outlined-weight-helper-text"
@@ -110,7 +125,42 @@ const Home: NextPage = () => {
               container
               direction={'column'}
               justifyContent={'space-between'}>
-              <Button>Copy</Button>
+              <Button
+                sx={{
+                  background: '#4EB3E3 0% 0% no-repeat padding-box',
+                  border: '1px solid #1F343E',
+                  borderRadius: '8px',
+                  opacity: 1,
+                  height: '64px',
+                }}>
+                <Typography
+                  sx={{
+                    font: 'normal normal bold 20px/32px Noto Sans',
+                    textTransform: 'none',
+
+                    color: '#FFFFFF',
+                  }}>
+                  Get Referral Link
+                </Typography>
+              </Button>
+            </Grid>
+
+            <Grid
+              p={8}
+              pt={5}
+              mb={5}
+              container
+              direction={'column'}
+              justifyContent={'space-between'}>
+              <Typography
+                sx={{
+                  font: 'normal normal normal 16px/32px Noto Sans',
+                  textTransform: 'none',
+
+                  color: '#6D7A80',
+                }}>
+                Limits on max rewards apply.
+              </Typography>
             </Grid>
           </Card>
         </Grid>
@@ -120,50 +170,263 @@ const Home: NextPage = () => {
               m: 10,
               backgroundColor: '#F8CC5D',
               boxShadow: 'none',
-              width: '544px',
+              width: { lg: '544px', xs: 'auto' },
               height: '797px',
-            }}></Card>
+            }}>
+            <Grid container direction={'column'}>
+              <Grid container direction={'row'}>
+                <Grid item lg={4}>
+                  <img src="/assets/invite.svg" alt="invite" />
+                </Grid>
+                <Grid item lg={8}>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal bold 20px/32px Noto Sans',
+                        textTransform: 'none',
+
+                        color: '#6D7A80',
+                      }}>
+                      Step 1
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal normal 32px/48px Caveat Brush',
+                        textTransform: 'uppercase',
+
+                        color: '#6D7A80',
+                      }}>
+                      INVITE FRIENDS{' '}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal normal 20px/32px Noto Sans',
+                        textTransform: 'none',
+                        color: '#6D7A80',
+                      }}>
+                      Refer friends with your unique referral link.
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              <Grid container direction={'row'} pt={10}>
+                <Grid item lg={8}>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal bold 20px/32px Noto Sans',
+                        textTransform: 'none',
+
+                        color: '#6D7A80',
+                      }}>
+                      Step 1
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal normal 32px/48px Caveat Brush',
+                        textTransform: 'uppercase',
+
+                        color: '#6D7A80',
+                      }}>
+                      INVITE FRIENDS{' '}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal normal 20px/32px Noto Sans',
+                        textTransform: 'none',
+                        color: '#6D7A80',
+                      }}>
+                      Refer friends with your unique referral link.
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Grid item lg={4}>
+                  <img src="/assets/collect-coins.svg" alt="invite" />
+                </Grid>
+              </Grid>
+
+              <Grid container direction={'row'} pt={10}>
+                <Grid item lg={4}>
+                  <img src="/assets/voucher.svg" alt="invite" />
+                </Grid>
+                <Grid item lg={8}>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal bold 20px/32px Noto Sans',
+                        textTransform: 'none',
+
+                        color: '#6D7A80',
+                      }}>
+                      Step 1
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal normal 32px/48px Caveat Brush',
+                        textTransform: 'uppercase',
+
+                        color: '#6D7A80',
+                      }}>
+                      INVITE FRIENDS{' '}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        font: 'normal normal normal 20px/32px Noto Sans',
+                        textTransform: 'none',
+                        color: '#6D7A80',
+                      }}>
+                      Refer friends with your unique referral link.
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Card>
         </Grid>
       </Grid>
 
-      {/* <Grid container direction={'row'}  justifyContent={"space-around"}>
-        <Grid item  >
-          <Card  sx={{m:10,background: "#F8F4F9 0% 0% no-repeat padding-box", width: "544px",
-height: "797px"}}>
-            <Grid item>REFER FRIENDS AND GET REWARDS</Grid>
-            <Grid item>
-              Refer your friends to us and earn hotel booking vouchers. We'll
-              give you 1 coin for each friend that installs our extension.
-              Minimum cash-out at 20 coins.
-            </Grid>{' '}
-            <Grid item>
-              <TextField></TextField>
+      <Grid lg={12}>
+        <Card
+          sx={{
+            height: 100,
+            background: '#45565E 0% 0% no-repeat padding-box',
+            border: '1px solid #1F343E',
+          }}>
+          <Grid
+            container
+            direction={'row'}
+            justifyContent={'center'}
+            px={50}
+            spacing={3}>
+            <Grid item lg={3.5} alignContent={'center'} mt={2}>
+              <Box
+                sx={{
+                  background: '#45565E 0% 0% no-repeat padding-box',
+                  border: '1px solid #1F343E',
+                  borderRadius: 3,
+                }}>
+                <Grid container p={1}>
+                  <Grid item px={3}>
+                    <img width={40} src="/assets/chrome.svg" alt="chrome" />
+                  </Grid>
+                  <Grid item pt={0.5}>
+                    <Typography
+                      sx={{
+                        color: '#F8F4F9',
+                        font: 'normal normal normal 16px/16px Noto Sans',
+                      }}>
+                      available in the
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: '#F8F4F9',
+                        font: 'normal normal bold 20px/16px Gadugi',
+                      }}>
+                      chrome web store
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Box>
             </Grid>
-          </Card>
-        </Grid>
-        <Grid item   direction={'column'}>
-          <Card>
-            <Grid item container>
-              {' '}
-              <Grid item sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <img src="/assets/logo.svg" alt="Kitty Katty!" />
+
+            <Grid item lg={3.5} alignContent={'center'} mt={2}>
+              <Box
+                sx={{
+                  background: '#45565E 0% 0% no-repeat padding-box',
+                  border: '1px solid #1F343E',
+                  borderRadius: 3,
+                }}>
+                <Grid container p={1}>
+                  <Grid item px={3}>
+                    <img
+                      width={40}
+                      src="/assets/apple.svg"
+                      alt="Kitty Katty!"
+                    />
+                  </Grid>
+                  <Grid item pt={0.5}>
+                    <Typography
+                      sx={{
+                        color: '#F8F4F9',
+                        font: 'normal normal normal 16px/16px Noto Sans',
+                      }}>
+                      available in the
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: '#F8F4F9',
+                        font: 'normal normal bold 20px/16px Gadugi',
+                      }}>
+                      apple app store
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Box>
+            </Grid>
+
+            <Grid item lg={3.5} alignContent={'center'} mt={4}>
+              <Rating value={5} sx={{ color: 'white' }}></Rating>
+            </Grid>
+          </Grid>
+        </Card>
+      </Grid>
+
+      <Grid lg={12}>
+        <Card
+          sx={{
+            height: 400,
+            background: '#F8F4F9 0% 0% no-repeat padding-box',
+            border: '1px solid #1F343E',
+          }}>
+          <Grid
+            lg={4}
+            container
+            sx={{ py: 3 }}
+            justifyContent={'space-between'}
+            mx={30}>
+            <Grid item sx={{}}>
+              <Grid container direction={'column'}>
+                <Grid item>
+                  <img src="/assets/logo.svg" alt="Kitty Katty!" />
+                </Grid>
+                <Grid item pt={10}>
+                  <Typography
+                    sx={{
+                      color: '#1F343E',
+                      font: 'normal normal normal 16px/24px Noto Sans',
+                    }}>
+                    {
+                      'Ratepunk compares hotel room prices across the major online travel agencies. When you search for a room, Ratepunk extension scans the top booking sites and runs a price comparison, so you can be confident in knowing youre getting the best deal!'
+                    }
+                  </Typography>
+                </Grid>
+                <Grid item pt={10}>
+                  <Typography
+                    sx={{
+                      color: '#6D7A80',
+                      font: 'normal normal normal 16px/24px Noto Sans',
+                    }}>
+                    {'© 2021 Ratepunk. All Rights Reserved.'}
+                  </Typography>
+                </Grid>
               </Grid>
-              <Grid item container>
-                <Grid item>STEP 1</Grid> <Grid item>INVITE FRIENDS</Grid>{' '}
-                <Grid item>Refer friends with your unique referral link.</Grid>
-              </Grid>
             </Grid>
-            <Grid item container>
-              Refer your friends to us and earn hotel booking vouchers. We'll
-              give you 1 coin for each friend that installs our extension.
-              Minimum cash-out at 20 coins.
-            </Grid>
-            <Grid item container>
-              <TextField></TextField>
-            </Grid>
-          </Card>
-        </Grid>
-      </Grid> */}
+          </Grid>
+        </Card>
+      </Grid>
     </Grid>
   );
 };
