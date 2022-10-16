@@ -1,9 +1,9 @@
+import axios, { AxiosError } from 'axios';
+import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
 import {
   jsonbinFetchBinEndpoint,
   jsonbinPutBinEndpoint,
-} from '@/src/utils/jsonbinEndpoints';
-import axios, { AxiosError } from 'axios';
-import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
+} from '../../src/utils/jsonbinEndpoints';
 
 const handleRatings = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

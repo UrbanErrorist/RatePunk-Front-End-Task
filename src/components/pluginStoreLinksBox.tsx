@@ -1,4 +1,5 @@
 import { Card, Grid, Box, Typography, Rating } from '@mui/material';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 const PluginStoreLinksBox: FC = () => {
