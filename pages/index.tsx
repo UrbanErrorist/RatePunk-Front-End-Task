@@ -8,11 +8,7 @@ import PluginStoreLinksBox from '../src/components/pluginStoreLinksBox';
 import ReferralTextBox from '../src/components/referralTextBox';
 
 import type { NextPage } from 'next';
-const ImgWrapper = styled('img')(
-  ({ theme }) => `
-    margin-right: ${theme.spacing(1)};
-`,
-);
+
 const Home: NextPage = () => {
   return (
     <Grid sx={{ backgroundColor: '#F8CC5D' }}>
