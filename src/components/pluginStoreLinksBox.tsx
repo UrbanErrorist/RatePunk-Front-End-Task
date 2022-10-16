@@ -1,7 +1,9 @@
 import { Card, Grid, Box, Typography, Rating } from '@mui/material';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 const PluginStoreLinksBox: FC = () => {
+  const router = useRouter();
   return (
     <Card
       sx={{
@@ -15,7 +17,17 @@ const PluginStoreLinksBox: FC = () => {
         justifyContent={'center'}
         px={{ xs: 2, lg: 30 }}
         spacing={3}>
-        <Grid item xs={12} lg={3.5} alignContent={'center'} mt={2}>
+        <Grid
+          item
+          xs={12}
+          lg={3.5}
+          alignContent={'center'}
+          mt={2}
+          onClick={() => {
+            router.push(
+              'https://chrome.google.com/webstore/detail/ratepunk-same-hotel-way-c/gdaioanblcnghddimngklkhgcbomfdck?utm_source=ratepunk',
+            );
+          }}>
           <Box
             sx={{
               background: '#45565E 0% 0% no-repeat padding-box',
@@ -47,7 +59,15 @@ const PluginStoreLinksBox: FC = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} lg={3.5} alignContent={'center'} mt={2}>
+        <Grid
+          item
+          xs={12}
+          lg={3.5}
+          alignContent={'center'}
+          mt={2}
+          onClick={() => {
+            router.push('https://apps.apple.com/app/ratepunk/id1607823726');
+          }}>
           <Box
             sx={{
               background: '#45565E 0% 0% no-repeat padding-box',
