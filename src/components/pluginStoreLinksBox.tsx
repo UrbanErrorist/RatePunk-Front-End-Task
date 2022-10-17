@@ -7,7 +7,9 @@ const PluginStoreLinksBox: FC = () => {
   return (
     <Card
       sx={{
+        mt: { md: 0, xs: 2 },
         py: { md: 3, xs: 2 },
+        borderRadius: 0,
 
         background: '#45565E 0% 0% no-repeat',
       }}>
@@ -45,7 +47,7 @@ const PluginStoreLinksBox: FC = () => {
                 <Typography
                   sx={{
                     color: '#F8F4F9',
-                    font: 'normal normal normal 16px/16px Noto Sans',
+                    font: 'normal normal normal 13px/13px Noto Sans',
                   }}>
                   available in the
                 </Typography>
@@ -54,6 +56,7 @@ const PluginStoreLinksBox: FC = () => {
                   sx={{
                     color: '#F8F4F9',
                     font: 'normal normal bold 20px/16px Gadugi',
+                    pt: 0.5,
                   }}>
                   chrome web store
                 </Typography>
@@ -88,12 +91,13 @@ const PluginStoreLinksBox: FC = () => {
                 <Typography
                   sx={{
                     color: '#F8F4F9',
-                    font: 'normal normal normal 16px/16px Noto Sans',
+                    font: 'normal normal normal 13px/13px Noto Sans',
                   }}>
                   available in the
                 </Typography>
                 <Typography
                   sx={{
+                    pt: 0.5,
                     color: '#F8F4F9',
                     font: 'normal normal bold 20px/16px Gadugi',
                   }}>
