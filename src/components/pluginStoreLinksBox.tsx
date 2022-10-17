@@ -33,6 +33,9 @@ const PluginStoreLinksBox: FC = () => {
               background: '#45565E 0% 0% no-repeat padding-box',
               border: '1px solid #1F343E',
               borderRadius: 3,
+              '&:hover': {
+                cursor: 'pointer',
+              },
             }}>
             <Grid container p={1}>
               <Grid item px={{ xs: 2, md: 2 }}>
@@ -73,6 +76,9 @@ const PluginStoreLinksBox: FC = () => {
               background: '#45565E 0% 0% no-repeat padding-box',
               border: '1px solid #1F343E',
               borderRadius: 3,
+              '&:hover': {
+                cursor: 'pointer',
+              },
             }}>
             <Grid container p={1}>
               <Grid item px={{ xs: 2, md: 3 }}>

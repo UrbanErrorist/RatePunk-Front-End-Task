@@ -288,6 +288,12 @@ const ReferralTextBox = () => {
                     <Button
                       fullWidth
                       variant="contained"
+                      onClick={() => {
+                        navigator.clipboard.writeText(referralLink).then(() => {
+                          setOpen(true);
+                          setMessage('Copied to clipboard!');
+                        });
+                      }}
                       sx={{
                         height: { lg: '58px', xs: '56px' },
                         background: '#4EB3E3 0% 0% no-repeat padding-box',
