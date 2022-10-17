@@ -17,8 +17,7 @@ const handleRatings = async (req: NextApiRequest, res: NextApiResponse) => {
           {
             headers: {
               'Content-Type': 'application/json',
-              'X-Master-Key':
-                '$2b$10$Wfw/1WBb9F/5bvVqOMBUxeUzjib.7CNyuLN8xV/U8hZCh8vlsMoSm',
+              'X-Master-Key': process.env.NEXT_PUBLIC_JSONBIN_MASTER_KEY,
             },
           },
         )
@@ -37,8 +36,7 @@ const handleRatings = async (req: NextApiRequest, res: NextApiResponse) => {
       const { data } = await axios.get(jsonbinFetchBinEndpoint, {
         headers: {
           'Content-Type': 'application/json',
-          'X-Master-Key':
-            '$2b$10$Wfw/1WBb9F/5bvVqOMBUxeUzjib.7CNyuLN8xV/U8hZCh8vlsMoSm',
+          'X-Master-Key': process.env.NEXT_PUBLIC_JSONBIN_MASTER_KEY,
         },
       });
 
