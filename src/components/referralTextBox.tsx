@@ -219,7 +219,10 @@ const ReferralTextBox = () => {
                         sx: {
                           color: '#6D7A80',
                           pl: 2,
-                          font: 'normal normal normal 20px/20px Noto Sans',
+                          font: {
+                            md: 'normal normal normal 20px/20px Noto Sans',
+                            xs: 'normal normal normal 12px/12px Noto Sans',
+                          },
                         },
                       }}
                     />
@@ -242,7 +245,10 @@ const ReferralTextBox = () => {
                       }}>
                       <Typography
                         sx={{
-                          font: 'normal normal bold 20px/32px Noto Sans',
+                          font: {
+                            md: 'normal normal normal 20px/32px Noto Sans',
+                            xs: 'normal normal normal 13px/13px Noto Sans',
+                          },
                           textTransform: 'none',
 
                           color: '#FFFFFF',
@@ -301,7 +307,18 @@ const ReferralTextBox = () => {
                         borderRadius: { md: '0px 8px 8px 0px', xs: 2 },
                         mt: { md: 0, xs: 2 },
                       }}>
-                      Copy
+                      <Typography
+                        sx={{
+                          font: {
+                            md: 'normal normal normal 20px/32px Noto Sans',
+                            xs: 'normal normal normal 13px/13px Noto Sans',
+                          },
+                          textTransform: 'none',
+
+                          color: '#FFFFFF',
+                        }}>
+                        Copy
+                      </Typography>
                     </Button>
                   </Grid>
                 </Grid>
